@@ -20,7 +20,7 @@ describe Scan do
       end
 
       describe "with scan option :include_simulator_logs set to false" do
-        it "does not copy any device logs to the output directory", requires_xcodebuild: true do
+        it "does not copy any device logs to the output directory" do
           # Circle CI is setting the SCAN_INCLUDE_SIMULATOR_LOGS env var, so just leaving
           # the include_simulator_logs option out does not let it default to false
           Scan.config = FastlaneCore::Configuration.create(Scan::Options.available_options, {
